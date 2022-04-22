@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=astral_ark
+POSTGRES_USER=crdrCBVrAahPrOVAcztjCZfRGYZDUUAl
+POSTGRES_PASSWORD=KooSZF1CtBpEZRJ2CW1reSmEWGf6teurqi1HvZ6dA7movxutMA194szNcQilYM3Z
