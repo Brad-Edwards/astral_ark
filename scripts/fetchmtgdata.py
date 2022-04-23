@@ -9,6 +9,8 @@ import urllib.request
 # Every Planechase card has a "type_line" of "Plane - <plane>"
 TYPE_LINE_FRAGMENT = "Plane — "
 
+CARD_LANGUAGE = "en"
+
 url = "https://api.scryfall.com/bulk-data/oracle_cards"
 response = urllib.request.urlopen(url)
 url = json.load(response)["download_uri"]
@@ -16,7 +18,11 @@ url = json.load(response)["download_uri"]
 f = urllib.request.urlopen(url)
 data = json.load(f)
 
-planechase_cards = [card for card in data if TYPE_LINE_FRAGMENT in card["type_line"]]
+planechase_cards = [
+    card
+    for card in data
+    if TYPE_LINE_FRAGMENT in card["type_line"] and card["lang"] == CARD_LANGUAGE
+]
 
 with open("../data/planechase-cards.json", "w", encoding="utf-8") as g:
     json.dump(planechase_cards, g, ensure_ascii=False, indent=4)
